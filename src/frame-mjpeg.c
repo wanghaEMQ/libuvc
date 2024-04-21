@@ -146,6 +146,8 @@ static uvc_error_t uvc_mjpeg_convert(uvc_frame_t *in, uvc_frame_t *out) {
     dinfo.out_color_space = JCS_RGB;
   else if (out->frame_format == UVC_FRAME_FORMAT_GRAY8)
     dinfo.out_color_space = JCS_GRAYSCALE;
+  else if (out->frame_format == UVC_FRAME_FORMAT_BGR)
+    dinfo.out_color_space = JCS_EXT_BGR;
   else
     goto fail;
 
